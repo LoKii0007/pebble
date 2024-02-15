@@ -222,7 +222,7 @@ export default function Comp1() {
                         </div>
                     </div>
                     <div className="peb-bottom d-flex justify-content-center align-items-center">
-                        <img className='main-img' src="public/pebble.png" alt="pebble" />
+                        <img className='main-img' src="/pebble.png" alt="pebble" />
                     </div>
                     <div className="peb-bg3 position-absolute d-flex flex-column">
                         <img className='tree' src="/tree1.png" alt="" />
