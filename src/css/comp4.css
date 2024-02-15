@@ -1,0 +1,19 @@
+.comp4{
+    background-color: #BDDA88;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.item img{
+    border-radius: 10px;
+    width: 400px;
+}
+
+.l2 video{
+    width: 400px;
+    border-radius: 10px;
+}
+
+.l1 img , .l3 img{
+    width: 400px;
+}

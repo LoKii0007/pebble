@@ -1,0 +1,56 @@
+.comp3{
+    height: 100vh;
+    background-image: url();
+    overflow: hidden;
+}
+
+.comp3-bg{
+    top: 0%;
+    z-index: 100;
+}
+
+.grid{
+    z-index: 100;
+}
+
+.comp3-top{
+    z-index: 200;
+}
+
+.grid img{
+    width: 100vw;
+    transform: translateY(-150px);
+}
+
+.grid-on {
+    width: 50vw;
+    overflow: hidden;
+}
+
+.grid-off {
+    width: 50vw;
+    overflow: hidden;
+}
+
+.comp3-left{
+    width: 50vw;
+    overflow: hidden;
+}
+
+.comp3-right{
+    width: 50vw;
+    overflow: hidden;
+}
+
+.ongrid-head , .offgrid-head{
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.ongrid-head , .ongrid-body{
+    color: #575349;
+}
+
+.offgrid-head, .offgrid-body{
+    color: #BDDA88;
+}

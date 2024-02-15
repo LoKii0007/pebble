@@ -1,0 +1,29 @@
+.navbar{
+    position: fixed;
+    width: 100%;
+}
+
+.nav-left, .nav-right{
+    border-radius: 10px;
+}
+
+.nav-left{
+    background-color: #BDDA88;
+}
+
+.nav-left img{
+    width: 48px;
+}
+
+.nav-right{
+    background-color: #BDDA88;
+}
+
+.preorder{
+    background-color: #A3BF6E;
+    border-radius: 10px;
+}
+
+.navbar{
+    z-index: 1000;
+}
