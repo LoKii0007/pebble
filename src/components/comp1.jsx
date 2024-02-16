@@ -16,6 +16,7 @@ export default function Comp1() {
     const [image, setImage] = useState("/img1.png")
     const [Opacity2, setOpacity2] = useState("#57534948")
     const [Opacity3, setOpacity3] = useState("#57534948")
+    const [flag , setFlag] = useState(false)
 
     useEffect(() => {
 
@@ -28,37 +29,37 @@ export default function Comp1() {
         });
 
         timeline.to('.main-img', {
-            transformOrigin: 'center center',
-            y: 100,
-            x: -90,
+            transformOrigin: 'left bottom',
+            y: 20,
+            x: 165,
             transform: 'scale(0.58)',
-            duration: 1
+            duration: 0.8
         }, 0);
 
         timeline.to('.meet', {
             opacity: 1,
             y: -50,
-            duration: 1
+            duration: 0.8
         }, 0);
 
         timeline.to('.pebble', {
             opacity: 1,
             y: -200,
-            duration: 1
+            duration: 0.8
         }, 0);
 
         timeline.to('.c1-bg', {
             transform: 'scale(1)',
-            duration: 1
+            duration: 0.8
         }, 0);
 
         timeline.to('.peb-bg1', {
-            duration: 1,
+            duration: 0.8,
             y: 0,
         }, 0);
 
         timeline.to('.lake', {
-            duration: 1,
+            duration: 0.8,
             y: 100,
         }, 0);
 
@@ -106,9 +107,9 @@ export default function Comp1() {
 
     }, [Opacity3, Opacity2]);
 
+
     const animationRef2 = useRef(null);
     const animationRef3 = useRef(null);
-
     useEffect(() => {
         const tl1 = gsap.timeline({
             paused: true,
@@ -154,15 +155,18 @@ export default function Comp1() {
                 tl1.play();
                 ScrollTrigger.update();
                 document.body.style.overflow = "hidden";
+                setFlag(true)
             },
             onLeaveBack: () => {
                 if (tl2.progress() > 0) {
                     tl2.eventCallback("onReverseComplete", () => {
                         tl1.reverse();
+                    setFlag(false)
                     });
                     tl2.reverse();
                 } else {
                     tl1.reverse();
+                    setFlag(false)
                 }
             }
         });
@@ -172,6 +176,10 @@ export default function Comp1() {
             start: "top 99%",
             scrub: 1,
             onEnter: () => {
+                if(!flag){
+                    tl1.play()
+                    setFlag(true)
+                }
                 tl2.play();
                 ScrollTrigger.update();
                 document.body.style.overflow = "hidden";
@@ -193,10 +201,11 @@ export default function Comp1() {
             scrollTrigger: {
                 trigger: ".comp4",
                 start: "top top",
-                end: "+=1",
-                scrub: .7
+                end: "top top",
+                scrub: .7,
             },
-            width: "180vw",
+            width: "90vw",
+
             duration: .6
         })
 
@@ -282,7 +291,7 @@ export default function Comp1() {
                         <img src="/l1.png" alt="" />
                     </div>
                     <div className="l2 item py-5">
-                        <video controls className='peb-vid' src="/vid.mp4"></video>
+                        <video controls autoPlay muted className='peb-vid' src="/vid.mp4"></video>
                     </div>
                     <div className="l3 item">
                         <img className='last-item' src="/l3.png" alt="" />
