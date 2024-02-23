@@ -1,12 +1,13 @@
 .comp3{
     height: 100vh;
-    background-image: url();
+    background-color: #BDDA88;
     overflow: hidden;
 }
 
 .comp3-bg{
     top: 0%;
     z-index: 100;
+    border-radius: 16px;
 }
 
 .grid{
@@ -15,6 +16,7 @@
 
 .comp3-top{
     z-index: 200;
+    border-radius: 16px;
 }
 
 .grid img{

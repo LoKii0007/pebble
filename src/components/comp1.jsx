@@ -29,22 +29,16 @@ export default function Comp1() {
         });
 
         timeline.to('.main-img', {
-            transformOrigin: 'left bottom',
-            y: 20,
-            x: 165,
-            transform: 'scale(0.58)',
+            transformOrigin: 'bottom center',
+            y: "5%",
+            x: "-6%",
+            transform: 'scale(0.6)',
             duration: 0.8
         }, 0);
 
-        timeline.to('.meet', {
+        timeline.to('.intro-text', {
             opacity: 1,
-            y: -50,
-            duration: 0.8
-        }, 0);
-
-        timeline.to('.pebble', {
-            opacity: 1,
-            y: -200,
+            y: 0,
             duration: 0.8
         }, 0);
 
@@ -60,7 +54,8 @@ export default function Comp1() {
 
         timeline.to('.lake', {
             duration: 0.8,
-            y: 100,
+            y: "-27%",
+            scale:1
         }, 0);
 
         ScrollTrigger.create({
@@ -80,7 +75,6 @@ export default function Comp1() {
         animationRef1.current = timeline;
     }, []);
 
-
     useEffect(() => {
         const timer1 = setTimeout(() => {
             setImage("/img2.png");
@@ -97,6 +91,7 @@ export default function Comp1() {
             setImage("/img1.png");
             setOpacity3("#57534948");
             setOpacity2("#57534948");
+            setFlag(!flag)
         }, 7500);
 
         return () => {
@@ -105,7 +100,7 @@ export default function Comp1() {
             clearTimeout(timer3);
         };
 
-    }, [Opacity3, Opacity2]);
+    }, [flag]);
 
 
     const animationRef2 = useRef(null);
@@ -204,9 +199,19 @@ export default function Comp1() {
                 end: "top top",
                 scrub: .7,
             },
-            width: "90vw",
+            width: "100vw",
+            duration: .8
+        })
 
-            duration: .6
+        gsap.to(".l1", {
+            scrollTrigger: {
+                trigger: ".comp4",
+                start: "top center",
+                end: "top 20%",
+                scrub: .7,
+            },
+            marginTop:0,
+            duration:.8
         })
 
     }, [])
@@ -217,20 +222,21 @@ export default function Comp1() {
 
                 <div className="peb d-flex flex-column position-relative">
                     <div className="peb-bg1 position-absolute">
-                        <img className='c1-bg d-flex justify-content-center align-items-center' src="/forrest1.png" alt="" />
-                    </div>
-                    <div className="peb-bg2 position-absolute ">
+                        <img className='c1-bg ' src="/forrest1.png" alt="" />
                         <img className='lake' src="/lake.png" alt="" />
                     </div>
-                    <div className="peb-top position-relative d-flex flex-column justify-content-center align-items-center">
-                        <div className="meet intro-text ">
+                    {/* <div className="peb-bg2 position-absolute ">
+                        <img className='lake' src="/lake.png" alt="" />
+                    </div> */}
+                    <div className="peb-top pe-5 position-relative d-flex flex-column justify-content-center align-items-center">
+                        <div className="meet intro-text pt-4 ">
                             meet
                         </div>
                         <div className="pebble intro-text">
                             pebble
                         </div>
                     </div>
-                    <div className="peb-bottom d-flex justify-content-center align-items-center">
+                    <div className="peb-bottom position-absolute d-flex">
                         <img className='main-img' src="/pebble.png" alt="pebble" />
                     </div>
                     <div className="peb-bg3 position-absolute d-flex flex-column">
@@ -257,7 +263,7 @@ export default function Comp1() {
 
                 <div className="comp3 d-flex position-relative">
 
-                    <div className="comp3-bg position-absolute d-flex">
+                    <div className="comp3-bg position-absolute d-flex justify-content-center align-items-center ">
                         <div className="grid-on grid d-flex justify-content-start">
                             <img className='' src="/ongrid.jpg" alt="" />
                         </div>
@@ -266,7 +272,7 @@ export default function Comp1() {
                         </div>
                     </div>
 
-                    <div className="comp3-top d-flex">
+                    <div className="comp3-top d-flex ">
                         <div className="comp3-left pt-5 grid-text d-flex flex-column justify-content-start align-items-center">
                             <div className="ongrid-head pt-5">
                                 On grid
@@ -291,7 +297,7 @@ export default function Comp1() {
                         <img src="/l1.png" alt="" />
                     </div>
                     <div className="l2 item py-5">
-                        <video controls autoPlay muted className='peb-vid' src="/vid.mp4"></video>
+                        <video autoPlay muted className='peb-vid' src="/vid.mp4"></video>
                     </div>
                     <div className="l3 item">
                         <img className='last-item' src="/l3.png" alt="" />

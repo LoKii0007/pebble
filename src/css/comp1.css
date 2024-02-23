@@ -29,7 +29,8 @@
 
 .lake{
     width: 100vw;
-    transform: translateY(30px);
+    transform: translateY(-15%);
+    scale: 1.1;
 }
 
 .peb-bg3{
@@ -49,21 +50,27 @@
 .intro-text{
     z-index: 400;
     opacity: 0;
+    transform: translateY(50px);
 }
 
 .meet{
-    transform: translateY(30px);
     font-size: 180px;
     font-weight: 700;
+    line-height: 180px;
+    z-index: 400;
+
 }
 
 .pebble{
     font-size: 289px;
     font-weight: 700;
+    line-height: 230px;
 }
 
 .peb-bottom{
-    transform: translateY(-500px);
+    /* transform: translateY(-400px); */
+    top: 30%;
+    left: 10%;
     z-index: 500;
 }
 
