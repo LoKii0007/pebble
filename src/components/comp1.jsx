@@ -195,8 +195,8 @@ export default function Comp1() {
         t2.to(".peb-vid", {
             scrollTrigger: {
                 trigger: ".comp4",
-                start: "top top",
-                end: "top top",
+                start: "top 1%",
+                end: "top 1%",
                 scrub: .7,
             },
             width: "100vw",
